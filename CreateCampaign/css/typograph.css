@@ -1,0 +1,26 @@
+@font-face {
+  font-family: 'Raleway Medium';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/raleway-medium.ttf');
+}
+
+@font-face {
+    font-family: 'Raleway SemiBold';
+    font-style: bold;
+    font-weight: 700;
+    src: url('../fonts/raleway-semiBold.ttf');
+  }
+
+  @font-face {
+    font-family: 'Raleway Bold';
+    font-style: bold;
+    font-weight: 700;
+    src: url('../fonts/raleway-bold.ttf');
+  }
+  @font-face {
+    font-family: 'Montserrat Medium';
+    font-style: bold;
+    font-weight: 700;
+    src: url('../fonts/montserrat-medium.ttf');
+  }
