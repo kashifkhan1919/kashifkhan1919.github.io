@@ -1,0 +1,1417 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <title>Create Campaign</title>
+
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/typograph.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/select_geography.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+
+
+  <div class="container-fluid">
+    <div class="row">
+
+      <nav id="sidebarMenu" class="col-md-4 col-lg-2 col-sm-3 d-md-block sidebar">
+        <div class="position-sticky pt-3">
+          <div class="sidebar-heading">
+            <h2>TrueQC</h2>
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+          </div>
+
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">
+                <img src="images/home-icon.png" class="sidebar-icons" />
+                Home
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#">
+                <img src="images/profile-icon.png" class="sidebar-icons" />
+                Profile
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#">
+                <img src="images/resource-icon.png" class="sidebar-icons" />
+                Resources
+              </a>
+            </li>
+
+          </ul>
+
+
+
+        </div>
+
+        <div class="bottom_nav">
+          <a href="#" class="nav_buttons">FAQ'S</a>
+          <a href="#" class="nav_buttons">Need Help?</a>
+        </div>
+
+      </nav>
+
+      <div class="main_wrapper col-md-8 ms-sm-auto col-lg-10 px-md-4">
+
+        <button class="navbar-toggler" onclick="openNav()">☰ TrueQC</button>
+
+        <div class="top_bar">
+
+          <h2><i class="bi bi-arrow-left color_default"
+              style="font-size: 24px; line-height: 1.2em; padding: 0px 15px;"></i> Create New Campaign</h2>
+
+          <div class="campaign_select_btn">
+            <p>DS</p> <a href="#"><i class="bi bi-chevron-down"></i></a>
+          </div>
+        </div>
+
+        <div id="form_container">
+          <form>
+
+            <!-- Campaign Name and Email row starts -->
+            <div class="container-fluid px-4">
+              <div class="row gx-6">
+                <div class="col-sm-6 col-md-12 col-lg-6 p-4">
+                  <div class="p-3  box-designs">
+                    <div class="heading">
+                      <h2>Campaign Name</h2>
+                      <p><i class="bi bi-question-circle-fill" style="font-size: 20px; color: #BFBFBF;"></i></p>
+                    </div>
+                    <div class="input-container">
+                      <label for="Campaign Name" class="form-label custom_label">Campaign Name</label>
+                      <input class="form-control custom_input" required name="campaignName" type="text"
+                        aria-label="Campaign Name">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6 col-md-12 col-lg-6 p-4">
+                  <div class="p-3 box-designs">
+                    <div class="heading">
+                      <h2>Campaign Owner Emails</h2>
+                      <p><i class="bi bi-question-circle-fill" style="font-size: 20px; color: #BFBFBF;"></i></p>
+                    </div>
+                    <div class="input-container">
+                      <label for="Email Id" class="form-label custom_label">Email Id</label>
+                      <div class="email_plus_adjust">
+                        <input class="form-control custom_input email_input" name="emaiId" type="email" id="email"
+                          aria-label="Email Id" required>
+                        <p class="plus_sign"><i onclick="showEmail();" class="bi bi-plus"
+                            style="font-size: 30px; font-weight: bold; color: #007BF5;"></i></p>
+                      </div>
+                      <ul id="showEmail">
+
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Campaign Name and Email row ends -->
+
+            <!-- Lead and Recording File row starts -->
+            <div class="container-fluid px-4">
+              <div class="row gx-6">
+                <div class="col p-4">
+                  <div class="p-3  box-designs">
+
+                    <div class="heading">
+                      <h2>Lead and Recording File</h2>
+                      <p><i class="bi bi-question-circle-fill" style="font-size: 20px; color: #BFBFBF;"></i></p>
+                    </div>
+
+                    <div class="upload_section_container">
+                      <div class="row gx-6">
+                        <div class="col p-4">
+                          <div class="p-3">
+
+
+                            <div class="upload_btns_wrapper">
+                              <div class="left_section">
+                                <i class="bi bi-upload"></i>
+                                <input type="button" id="btnFileUpload" name="leadfile" value="*Upload lead file"
+                                  class="uploadfile_btn" required />
+                                <span id="spnFilePath"></span>
+                                <input type="file" id="FileUpload1" style="display: none"
+                                  accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />
+                              </div>
+
+
+
+
+
+                              <div class="right_section">
+                                <p id="nofile_uploaded" class="nofile_text">*no file uploaded</p>
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
+
+                        <div class="col p-4">
+                          <div class="p-3" style="position: relative;">
+
+
+                            <div class="upload_btns_wrapper">
+                              <div class="left_section">
+                                <i class="bi bi-upload" style="top: 20px; left: 45px; color: #007BF5;"></i>
+
+                                <input type="button" id="files" name="files" value="Upload recording file" multiple
+                                  class="uploadfile_btn_multi" onclick="file.click();">
+                                <input type="file" multiple name="file" id="file" onchange="javascript:updateList()"
+                                  style="display: none;" />
+                              </div>
+
+                              <div class="right_section">
+                                <p id="nofile_uploaded_multi" class="nofile_text">*no file uploaded</p>
+                              </div>
+
+                            </div>
+
+
+                            <div id="fileList">
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <!-- Lead and Recording File row ends -->
+
+            <!-- Request Service Types row starts -->
+            <div class="container-fluid px-4">
+              <div class="row gx-6">
+                <div class="col p-4">
+                  <div class="p-3  box-designs">
+
+                    <div class="heading">
+                      <h2>Request Service Types</h2>
+                      <p><i class="bi bi-question-circle-fill" style="font-size: 20px; color: #BFBFBF;"></i></p>
+                    </div>
+
+                    <div id="service_types">
+
+                      <div class="row gx-4">
+
+                        <div class="col p4">
+
+                          <div class="row1">
+                            <img src="images/phone_data_icon_1.png" />
+                            <p>Phone and Data Verification</p>
+
+                            <div class="checkbox_group">
+                              <div class="yes_select_box">
+                                <input class="form-check-input" type="radio" name="phonedataverification"
+                                  id="phonedataverificationyes" value="Yes" required>
+                                <label class="form-check-label" for="inlineRadio1">Yes</label>
+                              </div>
+
+                              <div class="no_select_box">
+                                <input class="form-check-input" type="radio" name="phonedataverification"
+                                  id="phonedataverificationno" value="No" required>
+                                <label class="form-check-label" for="inlineRadio2">No</label>
+                              </div>
+                            </div>
+
+
+                          </div>
+
+                          <div class="row1">
+                            <img src="images/data_correction_icon.png" />
+                            <p>Data Correction</p>
+
+                            <div class="checkbox_group">
+                              <div class="yes_select_box">
+                                <input class="form-check-input" type="radio" name="datacorrection"
+                                  id="datacorrectionyes" value="Yes" required>
+                                <label class="form-check-label" for="inlineRadio1">Yes</label>
+                              </div>
+
+                              <div class="no_select_box">
+                                <input class="form-check-input" type="radio" name="datacorrection" id="datacorrectionno"
+                                  value="No" required>
+                                <label class="form-check-label" for="inlineRadio2">No</label>
+                              </div>
+                            </div>
+
+
+                          </div>
+
+                          <div class="row1">
+                            <img src="images/match_io_icon.png" />
+                            <p>Match IO</p>
+
+                            <div class="checkbox_group">
+                              <div class="yes_select_box">
+                                <input class="form-check-input" type="radio" name="matchio" id="matchioyes" value="Yes"
+                                  required>
+                                <label class="form-check-label" for="inlineRadio1">Yes</label>
+                              </div>
+
+                              <div class="no_select_box">
+                                <input class="form-check-input" type="radio" name="matchio" id="matchiono" value="No"
+                                  required>
+                                <label class="form-check-label" for="inlineRadio2">No</label>
+                              </div>
+                            </div>
+
+
+                          </div>
+
+
+
+
+                        </div>
+
+                        <div class="col p4">
+
+                          <div class="row1">
+                            <img src="images/recording_review_icon.png" />
+                            <p>Recording Review</p>
+
+                            <div class="checkbox_group">
+                              <div class="yes_select_box">
+                                <input class="form-check-input" type="radio" name="recordingreview"
+                                  id="recordingreviewyes" value="Yes" required>
+                                <label class="form-check-label" for="inlineRadio1">Yes</label>
+                              </div>
+
+                              <div class="no_select_box">
+                                <input class="form-check-input" type="radio" name="recordingreview"
+                                  id="recordingreviewno" value="No" required>
+                                <label class="form-check-label" for="inlineRadio2">No</label>
+                              </div>
+                            </div>
+
+
+                          </div>
+
+                          <div class="row1">
+                            <img src="images/recording_forensic_icon.png" />
+                            <p>Recording Forensics</p>
+
+                            <div class="checkbox_group">
+                              <div class="yes_select_box">
+                                <input class="form-check-input" type="radio" name="recordingforensic"
+                                  id="recordingforensicyes" value="Yes" required>
+                                <label class="form-check-label" for="inlineRadio1">Yes</label>
+                              </div>
+
+                              <div class="no_select_box">
+                                <input class="form-check-input" type="radio" name="recordingforensic"
+                                  id="recordingforensicno" value="No" required>
+                                <label class="form-check-label" for="inlineRadio2">No</label>
+                              </div>
+                            </div>
+
+
+                          </div>
+
+                          <div class="row1">
+                            <img src="images/full_qc_icon.png" />
+                            <p>Full QC</p>
+
+                            <div class="checkbox_group">
+                              <div class="yes_select_box">
+                                <input class="form-check-input" type="radio" name="fullqc" id="fullqcyes" value="Yes"
+                                  onclick="disableBtn();" required>
+                                <label class="form-check-label" for="inlineRadio1">Yes</label>
+                              </div>
+
+                              <div class="no_select_box">
+                                <input class="form-check-input" type="radio" name="fullqc" id="fullqcno" value="No"
+                                  onclick="disableBtn();" required>
+                                <label class="form-check-label" for="inlineRadio2">No</label>
+                              </div>
+                            </div>
+
+
+                          </div>
+
+
+
+
+                        </div>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <!-- Request Service Types row ends -->
+
+
+            <!-- job titles row start -->
+            <div class="container-fluid px-4">
+              <div class="row gx-6">
+                <div class="col p-4">
+                  <div class="p-3  box-designs">
+                    <div class="heading">
+                      <h2>Job Titles</h2>
+
+                      <span class="custom_txt">Custom</span>
+                      <label class="switch">
+                        <input type="checkbox" id="jobtitle_toggle" onclick="hideshow();">
+                        <span class="slider round"></span>
+                      </label>
+
+                    </div>
+                    <div class="input-container" id="addjobtitle" style="display: none;">
+                      <label for="Email Id" class="form-label custom_label">Job Titles</label>
+                      <div class="email_plus_adjust">
+                        <input class="form-control custom_input email_input" name="emaiId" type="email" id="jobtitles"
+                          aria-label="Email Id">
+                        <p class="plus_sign"><i onclick="showJobtitles();" class="bi bi-plus"
+                            style="font-size: 30px; font-weight: bold; color: #007BF5;"></i></p>
+                      </div>
+                      <ul id="showJobtitles">
+
+                      </ul>
+                    </div>
+
+                    <div id="select_jobtitle" class="select-item-container">
+                      <div class="select-item-list">
+
+                        <div class="select-item-list--single">
+                          <label for="Email Id" class="form-label custom_label">Job Titles</label>
+
+                          <div class="directorist-select directorist-select-multi" id="multiSelect1"
+                            data-isSearch="true" data-multiSelect='[{value: "Job titles", key: 0}]'>
+                            <select name="jobtitles">
+                              <option value="">Select Job titles</option>
+                              <option value="Job titles 1">Job titles 1</option>
+                              <option value="Job titles 2">Job titles 2</option>
+                              <option value="Job titles 3">Job titles 3</option>
+                              <option value="Job titles 4">Job titles 4</option>
+                              <option value="Job titles 5">Job titles 5</option>
+                              <option value="Job titles 6">Job titles 6</option>
+                              <option value="Job titles 7">Job titles 7</option>
+                              <option value="Job titles 8">Job titles 8</option>
+                              <option value="Job titles 9">Job titles 9</option>
+                              <option value="Job titles 10 ">Job titles 10</option>
+                              <option value="Job titles 11">Job titles 11</option>
+                            </select>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+
+                <div class="col p-4">
+                  <div class="p-3  box-designs">
+                    <div class="heading">
+                      <h2>Geography</h2>
+
+                      <span class="custom_txt">Custom</span>
+                      <label class="switch">
+                        <input type="checkbox" id="geography_toggle" onclick="hideshow2();">
+                        <span class="slider round"></span>
+                      </label>
+
+                    </div>
+                    <div class="input-container" id="addgeography" style="display: none;">
+                      <label for="Email Id" class="form-label custom_label">Geography</label>
+                      <div class="email_plus_adjust">
+                        <input class="form-control custom_input email_input" name="emaiId" type="email" id="geography"
+                          aria-label="Email Id">
+                        <p class="plus_sign"><i onclick="showGeography();" class="bi bi-plus"
+                            style="font-size: 30px; font-weight: bold; color: #007BF5;"></i></p>
+                      </div>
+                      <ul id="showgeography">
+
+                      </ul>
+                    </div>
+
+                    <div id="select_geography" class="select-item-container">
+                      <div class="select-item-list">
+
+                        <div class="select-item-list--single">
+                          <label for="Email Id" class="form-label custom_label">Geography</label>
+
+                          <div class="directorist-select directorist-select-multi" id="multiSelect2"
+                            data-isSearch="true" data-multiSelect='[{value: "United  States", key: 0}]'>
+                            <select name="geography">
+                              <option value="">Select Geography</option>
+                              <option value="Alabama">Alabama</option>
+                              <option value="Alaska">Alaska</option>
+                              <option value="Arizona">Arizona</option>
+                              <option value="Arkansas">Arkansas</option>
+                              <option value="California">California</option>
+                              <option value="Colorado">Colorado</option>
+                              <option value="Connecticut">Connecticut</option>
+                              <option value="Delaware">Delaware</option>
+                              <option value="Florida">Florida</option>
+                              <option value="Georgia">Georgia</option>
+                              <option value="Hawaii">Hawaii</option>
+                            </select>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- job titles row ends -->
+
+
+
+            <!-- Company Size, Industry and Revenue row starts -->
+            <div class="container-fluid px-4">
+              <div class="row gx-6">
+                <div class="col p-4">
+                  <div class="p-3  box-designs">
+
+                    <div class="heading">
+                      <h2>Company Size, Industry and Revenue</h2>
+                      
+                    </div>
+
+                    <div id="service_types">
+
+                      <div class="row gx-4">
+
+                        <div class="col p4">
+
+                          <div class="row1">
+                            
+                            <p>Company Size</p>
+
+                            <div class="checkbox_group">
+                              
+                              <div class="yes_select_box">
+                                <input class="form-check-input" type="radio" name="companysize"
+                                  id="companysize" value="Yes" required>
+                                <label class="form-check-label" for="inlineRadio1">Yes</label>
+                              </div>
+
+                              <div class="yes_select_box">
+                                <input class="form-check-input" type="radio" name="companysize"
+                                  id="companysizecustom" value="Custom" required>
+                                <label class="form-check-label" for="inlineRadio1">Custom</label>
+                              </div>
+
+                              <div class="no_select_box">
+                                <input class="form-check-input" type="radio" name="companysize"
+                                  id="companysize" value="No" required>
+                                <label class="form-check-label" for="inlineRadio2">No</label>
+                              </div>
+                            </div>
+
+
+                          </div>
+
+                          <div class="row1">
+                            
+                            <p>Industry</p>
+
+                            <div class="checkbox_group">
+                              <div class="yes_select_box">
+                                <input class="form-check-input" type="radio" name="industry"
+                                  id="industryyes" value="Yes" required>
+                                <label class="form-check-label" for="inlineRadio1">Yes</label>
+                              </div>
+
+                              <div class="yes_select_box">
+                                <input class="form-check-input" type="radio" name="industry"
+                                  id="industrycustom" value="Custom" required>
+                                <label class="form-check-label" for="inlineRadio1">Custom</label>
+                              </div>
+
+                              <div class="no_select_box">
+                                <input class="form-check-input" type="radio" name="industry" id="industryno"
+                                  value="No" required>
+                                <label class="form-check-label" for="inlineRadio2">No</label>
+                              </div>
+                            </div>
+
+
+                          </div>
+
+                          <div class="row1">
+                            
+                            <p>Revenue</p>
+
+                            <div class="checkbox_group">
+                              <div class="yes_select_box">
+                                <input class="form-check-input" type="radio" name="revenue" id="revenueyes" value="Yes"
+                                  required>
+                                <label class="form-check-label" for="inlineRadio1">Yes</label>
+                              </div>
+
+                              <div class="yes_select_box">
+                                <input class="form-check-input" type="radio" name="revenue" id="revenuecustom" value="Custom" required>
+                                <label class="form-check-label" for="inlineRadio1">Custom</label>
+                              </div>
+
+                              <div class="no_select_box">
+                                <input class="form-check-input" type="radio" name="revenue" id="revenueno" value="No"
+                                  required>
+                                <label class="form-check-label" for="inlineRadio2">No</label>
+                              </div>
+                            </div>
+
+
+                          </div>
+
+
+
+
+                        </div>
+
+                        <div class="col p4">
+
+                          
+                            
+                            <div id="select_industry" class="select-item-container" style="padding: 0px 40px;">
+                              <div class="select-item-list">
+        
+                                <div class="select-item-list--single">
+                                  
+        
+                                  <div class="directorist-select directorist-select-multi" id="multiSelect3"
+                                    data-isSearch="true" data-multiSelect='[{value: "Industry", key: 0}]'>
+                                    <select name="industry">
+                                      <option value="">Select Industry 1</option>
+                                      <option value="Industry 2">Industry 2</option>
+                                      <option value="Industry 3">Industry 3</option>
+                                      <option value="Industry 4">Industry 4</option>
+                                      <option value="Industry 5">Industry 5</option>
+                                      <option value="Industry 6">Industry 6</option>
+                                      <option value="Industry 7">Industry 7</option>
+                                      <option value="Industry 8">Industry 8</option>
+                                      <option value="Industry 9">Industry 9</option>
+                                      <option value="Industry 10">Industry 10</option>
+                                      <option value="Industry 11">Industry 11</option>
+                                      <option value="Industry 12">Industry 12</option>
+                                    </select>
+                                  </div>
+                                </div>
+        
+                              </div>
+                            </div>
+
+
+                         
+
+                         
+                            <div class="input-container">
+                              
+                              <div class="email_plus_adjust">
+                                <input class="form-control custom_input email_input" name="emaiId" type="text" id="industry"
+                                  aria-label="Email Id">
+                                <p class="plus_sign"><i onclick="showIndustry();" class="bi bi-plus"
+                                    style="font-size: 30px; font-weight: bold; color: #007BF5;"></i></p>
+                              </div>
+                              <ul id="showindustry">
+        
+                              </ul>
+                            </div>
+
+
+                        
+
+                          
+
+
+
+
+                        </div>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <!-- Company Size, Industry and Revenue row ends -->
+
+
+
+
+            <!--Custom Question and Answers row starts -->
+            <div class="container-fluid px-4">
+              <div class="row gx-6">
+
+                <div class="col-sm-6 col-md-12 col-lg-6 p-4">
+                  <div class="p-3 box-designs">
+                    <div class="heading">
+                      <h2>Custom Question and Answers</h2>
+                      
+                    </div>
+                    <div class="input-container">
+                      <label for="Custom QnA" class="form-label custom_label">Custom QnA</label>
+                      <div class="email_plus_adjust">
+                        <input class="form-control custom_input email_input" name="customQnA" type="text" id="customQnA" aria-label="Custom QnA" required>
+                        <p class="plus_sign"><i onclick="showcustomQnA();" class="bi bi-plus"
+                            style="font-size: 30px; font-weight: bold; color: #007BF5;"></i></p>
+                      </div>
+                      <ul id="customqna">
+
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-sm-6 col-md-12 col-lg-6 p-4">
+                  <div class="p-3  box-designs">
+                    <div class="heading">
+                      <h2>Speical Request</h2>
+                      
+                    </div>
+                    <div class="input-container">
+                      <label for="Campaign Name" class="form-label custom_label">Speical Request</label>
+                      <input class="form-control custom_input" required name="speicalrequest" type="text" aria-label="Campaign Name">
+                    </div>
+                  </div>
+                </div>
+               
+              </div>
+            </div>
+            <!-- Custom Question and Answers row ends -->
+
+
+            <!-- Target Account, Supression List and Script row starts -->
+            <div class="container-fluid px-4">
+              <div class="row gx-6">
+                <div class="col p-4">
+                  <div class="p-3  box-designs">
+
+                    <div class="heading">
+                      <h2>Target Account, Supression List and Script</h2>
+                      
+                    </div>
+
+                    <div id="service_types">
+
+                      <div class="row gx-4">
+
+                        <div class="col-md-12 col-sm-12 col-lg-6 p4">
+
+                          <div class="row1">
+                            
+                            <p>Target Account?*</p>
+
+                            <div class="checkbox_group">
+                              
+                              <div class="yes_select_box">
+                                <input class="form-check-input" type="radio" name="targetaccount"
+                                  id="targetaccountyes" value="Yes" required>
+                                <label class="form-check-label" for="inlineRadio1">Yes</label>
+                              </div>
+
+                              <div class="no_select_box">
+                                <input class="form-check-input" type="radio" name="targetaccount"
+                                  id="targetaccountno" value="No" required>
+                                <label class="form-check-label" for="inlineRadio2">No</label>
+                              </div>
+                            </div>
+
+
+                          </div>
+
+                          <div class="row1">
+                            
+                            <p>Suppression List?*</p>
+
+                            <div class="checkbox_group">
+                              <div class="yes_select_box">
+                                <input class="form-check-input" type="radio" name="suppressionlist"
+                                  id="suppressionlistyes" value="Yes" required>
+                                <label class="form-check-label" for="inlineRadio1">Yes</label>
+                              </div>
+
+                              <div class="no_select_box">
+                                <input class="form-check-input" type="radio" name="suppressionlist" id="suppressionlistno"
+                                  value="No" required>
+                                <label class="form-check-label" for="inlineRadio2">No</label>
+                              </div>
+                            </div>
+
+
+                          </div>
+
+                          <div class="row1">
+                            
+                            <p>Script?*</p>
+
+                            <div class="checkbox_group">
+                              <div class="yes_select_box">
+                                <input class="form-check-input" type="radio" name="script" id="scriptyes" value="Yes"
+                                  required>
+                                <label class="form-check-label" for="inlineRadio1">Yes</label>
+                              </div>
+
+                              <div class="no_select_box">
+                                <input class="form-check-input" type="radio" name="script" id="scriptno" value="No"
+                                  required>
+                                <label class="form-check-label" for="inlineRadio2">No</label>
+                              </div>
+                            </div>
+
+
+                          </div>
+
+
+
+
+                        </div>
+
+                        <div class="col-md-12 col-sm-12 col-lg-6 p4">
+
+                          <div id="target_section">
+
+                          
+                            
+                          <div class="upload_btns_wrapper">
+                            <div class="left_section">
+                              <i class="bi bi-upload"></i>
+                              <input type="button" id="btnFileUpload2" name="leadfile" value="*Upload lead file"
+                                class="uploadfile_btn" required />
+                              <span id="spnFilePath2"></span>
+                              <input type="file" id="FileUpload12" class="upload_btn_setting" />
+                            </div>
+
+                            <div class="right_section">
+                              <p id="nofile_uploaded2" class="nofile_text"><i class="bi bi-x" style="font-size: 24px; display: flex;"></i></p>
+                            </div>
+                          </div>
+
+
+
+                          <div class="upload_btns_wrapper">
+                            <div class="left_section">
+                              <i class="bi bi-upload"></i>
+                              <input type="button" id="btnFileUpload3" name="leadfile" value="*Upload lead file"
+                                class="uploadfile_btn" required />
+                              <span id="spnFilePath3"></span>
+                              <input type="file" id="FileUpload13" class="upload_btn_setting" />
+                            </div>
+
+                            <div class="right_section">
+                              <p id="nofile_uploaded3" class="nofile_text"><i class="bi bi-x" style="font-size: 24px; display: flex;"></i></p>
+                            </div>
+                          </div>
+
+
+
+
+                          <div class="upload_btns_wrapper">
+                            <div class="left_section">
+                              <i class="bi bi-upload"></i>
+                              <input type="button" id="btnFileUpload4" name="leadfile" value="*Upload lead file"
+                                class="uploadfile_btn" required />
+                              <span id="spnFilePath4"></span>
+                              <input type="file" id="FileUpload14" class="upload_btn_setting" />
+                            </div>
+
+                            <div class="right_section">
+                              <p id="nofile_uploaded4" class="nofile_text"><i class="bi bi-x" style="font-size: 24px; display: flex;"></i></p>
+                            </div>
+                          </div>
+
+                        </div>
+
+
+                        </div>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <!-- Target Account, Supression List and Script row ends -->
+
+
+
+
+            <!-- Asset row starts -->
+            <div class="container-fluid px-4">
+              <div class="row gx-6">
+                <div class="col p-4">
+                  <div class="p-3  box-designs">
+
+                    <div class="heading">
+                      <h2>Asset</h2>
+                      
+                    </div>
+
+                    <div id="service_types">
+
+                      <div class="row gx-4">
+
+                        <div class="col-md-12 col-sm-12 col-lg-4 p4">
+
+                          <div class="row1">
+                            
+                            <p style="padding-left: 0px; flex-basis: 100%;">Asset Specified?*</p>
+
+
+                          </div>
+
+                        </div>
+
+                        <div class="col-md-12 col-sm-12 col-lg-8 p4">
+
+                          <div class="row1">
+                            
+                            
+
+                            <div class="checkbox_group"  style="flex-basis: 100%;">
+                              
+                              <div class="yes_select_box">
+                                <input class="form-check-input" type="radio" name="assetspecifiedupload"
+                                  id="assetspecifiedupload" value="Upload file" required>
+                                <label class="form-check-label" for="inlineRadio1">Upload file</label>
+                              </div>
+
+                              <div class="yes_select_box">
+                                <input class="form-check-input" type="radio" name="assetspecifiedupload"
+                                  id="assetspecifiedyes" value="Yes" required>
+                                <label class="form-check-label" for="inlineRadio1">Paste Url</label>
+                              </div>
+
+                              <div class="no_select_box">
+                                <input class="form-check-input" type="radio" name="assetspecifiedupload"
+                                  id="assetspecifiedno" value="No" required>
+                                <label class="form-check-label" for="inlineRadio2">No</label>
+                              </div>
+                            </div>
+
+
+                          </div>
+
+                        </div>
+
+                    
+
+                      </div>
+
+                    </div>
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <!-- Asset row ends -->
+
+
+
+
+            <!-- Privacy Policy and GDPR row starts -->
+            <div class="container-fluid px-4">
+              <div class="row gx-6">
+                <div class="col p-4">
+                  <div class="p-3  box-designs">
+
+                    <div class="heading">
+                      <h2>Privacy Policy and GDPR</h2>
+                      
+                    </div>
+
+                    <div id="service_types">
+
+                      <div class="row gx-4">
+
+                        <div class="col-md-12 col-sm-12 col-lg-6 p4">
+
+                          <div class="row1">
+                            
+                            <p style="padding-left: 0px; flex-basis: 60%;">Compulsary Privacy Policy Specified?*</p>
+
+                            <div class="checkbox_group" style="flex-basis: 40%">
+                              
+                              <div class="yes_select_box">
+                                <input class="form-check-input" type="radio" name="privacypolicy"
+                                  id="privacypolicyyes" value="Yes" required>
+                                <label class="form-check-label" for="inlineRadio1">Yes</label>
+                              </div>
+
+                              <div class="no_select_box">
+                                <input class="form-check-input" type="radio" name="privacypolicy"
+                                  id="privacypolicyno" value="No" required>
+                                <label class="form-check-label" for="inlineRadio2">No</label>
+                              </div>
+                            </div>
+
+
+                          </div>
+
+                          <div class="row1">
+                            
+                            <p style="padding-left: 0px; flex-basis: 60%;">GDPR Active?*</p>
+
+                            <div class="checkbox_group" style="flex-basis: 40%">
+                              <div class="yes_select_box">
+                                <input class="form-check-input" type="radio" name="gdrp"
+                                  id="gdrpyes" value="Yes" required>
+                                <label class="form-check-label" for="inlineRadio1">Yes</label>
+                              </div>
+
+                              <div class="no_select_box">
+                                <input class="form-check-input" type="radio" name="gdrp" id="gdrpno"
+                                  value="No" required>
+                                <label class="form-check-label" for="inlineRadio2">No</label>
+                              </div>
+                            </div>
+
+
+                          </div>
+
+                   
+
+
+
+                        </div>
+
+                        <div class="col-md-12 col-sm-12 col-lg-6 p4 input_setting">
+
+                          <div id="privacypolicy_section">
+
+                            <div class="heading">
+                             
+                              
+                            </div>
+                            <div class="input-container">
+                              
+                              <input class="form-control custom_input custom_placeholder" required name="speicalrequest" placeholder="Policy" type="text" aria-label="Campaign Name">
+                            </div>
+
+                        </div>
+
+
+                        </div>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <!-- Privacy Policy and GDPR row ends -->
+
+
+
+
+            <!-- Submit Save Buttons row starts -->
+            <div class="container-fluid px-4">
+              <div class="row px-4 btn_alignment">
+                <div class="submit_save_buttons">
+                  <button type="submit" class="btn btn-primary custom_btns" id="savebtn">Save</button>
+                  <button type="submit" class="btn btn-primary custom_btns margin-right-0"
+                    id="submitbtn">Submit</button>
+                </div>
+              </div>
+            </div>
+            <!-- Submit Save Buttons row ends -->
+
+
+          </form>
+        </div>
+
+      </div>
+
+
+    </div>
+  </div>
+
+
+  <script>
+    function openNav() {
+      document.getElementById("sidebarMenu").style.display = "block";
+      document.getElementById("sidebarMenu").style.opacity = "1";
+      document.getElementById("sidebarMenu").style.zIndex = "99999";
+    }
+
+    function closeNav() {
+      document.getElementById("sidebarMenu").style.display = "none";
+      document.getElementById("sidebarMenu").style.opacity = "0";
+      document.getElementById("sidebarMenu").style.zIndex = "0";
+    }
+  </script>
+
+
+
+
+  <script src="js/script.js"></script>
+  <script>
+    pureScriptSelect('#multiSelect1');
+    pureScriptSelect('#multiSelect2');
+    pureScriptSelect('#multiSelect3');
+  </script>
+
+
+  <script>
+    // Create a "close" button and append it to each list item
+    var myNodelist = document.getElementsByTagName("LI");
+    var i;
+    for (i = 0; i < myNodelist.length; i++) {
+      var span = document.createElement("SPAN");
+      var txt = document.createTextNode("\u00D7");
+      span.className = "close";
+      span.appendChild(txt);
+      myNodelist[i].appendChild(span);
+    }
+
+
+    // Click on a close button to hide the current list item
+    var close = document.getElementsByClassName("close");
+    var i;
+    for (i = 0; i < close.length; i++) {
+      close[i].onclick = function () {
+        var div = this.parentElement;
+        div.style.display = "none";
+      }
+    }
+
+
+    // Create a new list item when clicking on the "Add" button
+    function showEmail() {
+      var li = document.createElement("li");
+      var inputValue = document.getElementById("email").value;
+      var t = document.createTextNode(inputValue);
+      li.appendChild(t);
+      if (inputValue === '') {
+        alert("Please Add Email Address");
+      } else {
+        document.getElementById("showEmail").appendChild(li);
+      }
+      document.getElementById("email").value = "";
+
+      var span = document.createElement("SPAN");
+      var txt = document.createTextNode("\u00D7");
+      span.className = "close";
+      span.appendChild(txt);
+      li.appendChild(span);
+
+      for (i = 0; i < close.length; i++) {
+        close[i].onclick = function () {
+          var div = this.parentElement;
+          div.style.display = "none";
+        }
+      }
+
+
+    }
+
+
+
+
+    function showJobtitles() {
+      var li = document.createElement("li");
+      var inputValue = document.getElementById("jobtitles").value;
+      var t = document.createTextNode(inputValue);
+      li.appendChild(t);
+      if (inputValue === '') {
+        alert("Please Add Job Titles");
+      } else {
+        document.getElementById("showJobtitles").appendChild(li);
+      }
+      document.getElementById("jobtitles").value = "";
+
+      var span = document.createElement("SPAN");
+      var txt = document.createTextNode("\u00D7");
+      span.className = "close";
+      span.appendChild(txt);
+      li.appendChild(span);
+
+      for (i = 0; i < close.length; i++) {
+        close[i].onclick = function () {
+          var div = this.parentElement;
+          div.style.display = "none";
+        }
+      }
+
+
+    }
+
+
+
+    function showGeography() {
+      var li = document.createElement("li");
+      var inputValue = document.getElementById("geography").value;
+      var t = document.createTextNode(inputValue);
+      li.appendChild(t);
+      if (inputValue === '') {
+        alert("Please Add Job Titles");
+      } else {
+        document.getElementById("showgeography").appendChild(li);
+      }
+      document.getElementById("geography").value = "";
+
+      var span = document.createElement("SPAN");
+      var txt = document.createTextNode("\u00D7");
+      span.className = "close";
+      span.appendChild(txt);
+      li.appendChild(span);
+
+      for (i = 0; i < close.length; i++) {
+        close[i].onclick = function () {
+          var div = this.parentElement;
+          div.style.display = "none";
+        }
+      }
+
+
+    }
+
+
+    function showIndustry() {
+      var li = document.createElement("li");
+      var inputValue = document.getElementById("industry").value;
+      var t = document.createTextNode(inputValue);
+      li.appendChild(t);
+      if (inputValue === '') {
+        alert("Please Add Job Titles");
+      } else {
+        document.getElementById("showindustry").appendChild(li);
+      }
+      document.getElementById("industry").value = "";
+
+      var span = document.createElement("SPAN");
+      var txt = document.createTextNode("\u00D7");
+      span.className = "close";
+      span.appendChild(txt);
+      li.appendChild(span);
+
+      for (i = 0; i < close.length; i++) {
+        close[i].onclick = function () {
+          var div = this.parentElement;
+          div.style.display = "none";
+        }
+      }
+
+
+    }
+
+
+
+    function showcustomQnA() {
+      var li = document.createElement("li");
+      var inputValue = document.getElementById("customQnA").value;
+      var t = document.createTextNode(inputValue);
+      li.appendChild(t);
+      if (inputValue === '') {
+        alert("Please Add Some Text");
+      } else {
+        document.getElementById("customqna").appendChild(li);
+      }
+      document.getElementById("customQnA").value = "";
+
+      var span = document.createElement("SPAN");
+      var txt = document.createTextNode("\u00D7");
+      span.className = "close";
+      span.appendChild(txt);
+      li.appendChild(span);
+
+      for (i = 0; i < close.length; i++) {
+        close[i].onclick = function () {
+          var div = this.parentElement;
+          div.style.display = "none";
+        }
+      }
+
+
+    }
+
+  </script>
+
+
+
+
+  <script type="text/javascript">
+    window.onload = function () {
+      var fileupload = document.getElementById("FileUpload1");
+      var filePath = document.getElementById("spnFilePath");
+      var button = document.getElementById("btnFileUpload");
+      button.onclick = function () {
+        fileupload.click();
+      };
+      fileupload.onchange = function () {
+        var fileName = fileupload.value.split('\\')[fileupload.value.split('\\').length - 1];
+        filePath.innerHTML = "<b>Selected File: </b>" + fileName;
+        document.getElementById("spnFilePath").style.display = "block";
+        document.getElementById("nofile_uploaded").style.display = "none";
+      };
+    };
+
+  </script>
+
+
+
+  <script>
+    updateList = function () {
+      var input = document.getElementById('file');
+      var output = document.getElementById('fileList');
+      var children = "";
+      for (var i = 0; i < input.files.length; ++i) {
+        children += '<li>' + input.files.item(i).name + '</li>';
+      }
+      output.innerHTML = '<ul>' + children + '</ul>';
+
+      document.getElementById("nofile_uploaded_multi").style.display = "none";
+
+      // Create a "close" button and append it to each list item
+      var myNodelist = document.getElementsByTagName("LI");
+      var i;
+      for (i = 0; i < myNodelist.length; i++) {
+        var span = document.createElement("SPAN");
+        var txt = document.createTextNode("\u00D7");
+        span.className = "close";
+        span.appendChild(txt);
+        myNodelist[i].appendChild(span);
+      }
+
+
+      // Click on a close button to hide the current list item
+      var close = document.getElementsByClassName("close");
+      var i;
+      for (i = 0; i < close.length; i++) {
+        close[i].onclick = function () {
+          var div = this.parentElement;
+          div.style.display = "none";
+        }
+      }
+
+
+    }
+
+  </script>
+
+
+
+
+  <script>
+    function disableBtn() {
+
+      // var fullqcBtn = document.getElementById("fullqcyes").value;
+      // var result = mylist.options[mylist.selectedIndex].text;
+      if (document.getElementById("fullqcyes").checked) {
+        //disable all the radio button 
+        document.getElementById("phonedataverificationyes").disabled = true;
+        document.getElementById("phonedataverificationno").disabled = true;
+        document.getElementById("datacorrectionyes").disabled = true;
+        document.getElementById("datacorrectionno").disabled = true;
+        document.getElementById("matchioyes").disabled = true;
+        document.getElementById("matchiono").disabled = true;
+        document.getElementById("recordingreviewyes").disabled = true;
+        document.getElementById("recordingreviewno").disabled = true;
+        document.getElementById("recordingforensicyes").disabled = true;
+        document.getElementById("recordingforensicno").disabled = true;
+      } else if (document.getElementById("fullqcno").checked) {
+        //enable all the radio button
+        document.getElementById("phonedataverificationyes").disabled = false;
+        document.getElementById("phonedataverificationno").disabled = false;
+        document.getElementById("datacorrectionyes").disabled = false;
+        document.getElementById("datacorrectionno").disabled = false;
+        document.getElementById("matchioyes").disabled = false;
+        document.getElementById("matchiono").disabled = false;
+        document.getElementById("recordingreviewyes").disabled = false;
+        document.getElementById("recordingreviewno").disabled = false;
+        document.getElementById("recordingforensicyes").disabled = false;
+        document.getElementById("recordingforensicno").disabled = false;
+      }
+    }
+  </script>
+
+
+  <script>
+    function hideshow() {
+      var togglebtn = document.getElementById("jobtitle_toggle");
+      var selecttitle = document.getElementById("select_jobtitle");
+      var addtitle = document.getElementById("addjobtitle");
+
+      togglebtn.onchange = function () {
+        if (addtitle.style.display !== 'none') {
+          console.log("clicked")
+          addtitle.style.display = 'none';
+          console.log("clicked2")
+          selecttitle.style.display = 'block';
+          console.log("clicked3")
+        }
+        else {
+          addtitle.style.display = 'block';
+          console.log("clicked4")
+          selecttitle.style.display = 'none';
+          console.log("clicked5")
+        }
+      }
+
+    }
+
+
+    function hideshow2() {
+      var geogtogglebtn = document.getElementById("geography_toggle");
+      var selectgeog = document.getElementById("select_geography");
+      var addgeog = document.getElementById("addgeography");
+
+      geogtogglebtn.onchange = function () {
+        if (addgeog.style.display !== 'none') {
+          console.log("clicked")
+          addgeog.style.display = 'none';
+          console.log("clicked2")
+          selectgeog.style.display = 'block';
+          console.log("clicked3")
+        }
+        else {
+          addgeog.style.display = 'block';
+          console.log("clicked4")
+          selectgeog.style.display = 'none';
+          console.log("clicked5")
+        }
+      }
+
+    }
+
+
+    
+
+  </script>
+
+
+
+</body>
+
+</html>
